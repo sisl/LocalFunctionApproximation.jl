@@ -7,7 +7,7 @@ LocalGIFunctionApproximator{G<:AbstractGrid}(grid::G) = LocalGIFunctionApproxima
 
 ################ INTERFACE FUNCTIONS ################
 function n_interpolants(gifa::LocalGIFunctionApproximator)
-  return length(gifa.grid)
+    return length(gifa.grid)
 end
 
 function get_all_interpolating_points(gifa::LocalGIFunctionApproximator)
