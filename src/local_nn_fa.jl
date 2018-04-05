@@ -9,9 +9,9 @@ mutable struct LocalNNFunctionApproximator{NT<:NNTree, V<:AbstractVector{Float64
     rnnR::Union{Float64,Void}
 end
 # Two default constructors for k and r
-LocalNNFunctionApproximator{NT <: NNTree,V<:AbstractVector{Float64}}(nntree::NT, nnpts::AbstractVector{V}, knnK::Int64) = 
+LocalNNFunctionApproximator(nntree::NT, nnpts::AbstractVector{V}, knnK::Int64) where {NT <: NNTree,V<:AbstractVector{Float64}} = 
     LocalNNFunctionApproximator(nntree, nnpts, zeros(length(nntree.indices)), knnK, nothing)
-LocalNNFunctionApproximator{NT <: NNTree,V<:AbstractVector{Float64}}(nntree::NT, nnpts::AbstractVector{V}, rnnR::Float64) = 
+LocalNNFunctionApproximator(nntree::NT, nnpts::AbstractVector{V}, rnnR::Float64) where {NT <: NNTree,V<:AbstractVector{Float64}} = 
     LocalNNFunctionApproximator(nntree, nnpts, zeros(length(nntree.indices)), nothing, rnnR)
 
 ################ INTERFACE FUNCTIONS ################

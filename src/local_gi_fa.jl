@@ -2,7 +2,7 @@ mutable struct LocalGIFunctionApproximator{G<:AbstractGrid} <: LocalFunctionAppr
 	grid::G
 	gvalues::Vector{Float64}
 end
-LocalGIFunctionApproximator{G<:AbstractGrid}(grid::G) = LocalGIFunctionApproximator(grid,zeros(length(grid)))
+LocalGIFunctionApproximator(grid::G) where {G<:AbstractGrid} = LocalGIFunctionApproximator(grid,zeros(length(grid)))
 
 
 ################ INTERFACE FUNCTIONS ################
