@@ -10,7 +10,7 @@ and [NearestNeighbors](https://github.com/KristofferC/NearestNeighbors.jl).
 Start Julia and run the following:
 
 ```julia
-Pkg.add("LocalFunctionApproximation")
+Pkg.clone("https://github.com/Shushman/LocalFunctionApproximation.jl")
 using LocalFunctionApproximation
 ```
 
@@ -29,6 +29,7 @@ gifa = LocalGIFunctionApproximator(grid, grid_values)  # create the function app
 Create a nearest neighbor tree using `NearestNeighbors` and create the corresponding approximator:
 
 ```julia
+using NearestNeighbors, StaticArrays
 points = [SVector(0.,0.), SVector(0.,1.), SVector(1.,1.), SVector(1.,0.)]   # the 4 corners of the unit square
 nntree = KDTree(points)                                                     # create a KDTree using the points
 vals = [1., 1., -1., -1]                                                    # values corresponding to points
