@@ -1,17 +1,14 @@
-# TODO : Depends currently on my local fork of NearestNeighbors
-# Link - https://github.com/Shushman/NearestNeighbors.jl/tree/addition/export_NNTree
-
 mutable struct LocalNNFunctionApproximator{NT<:NNTree, V<:AbstractVector{Float64}} <: LocalFunctionApproximator
     nntree::NT
-    nnpoints::AbstractVector{V} 
+    nnpoints::AbstractVector{V}
     nnvalues::Vector{Float64}
     knnK::Union{Int64,Void}
     rnnR::Union{Float64,Void}
 end
 # Two default constructors for k and r
-LocalNNFunctionApproximator(nntree::NT, nnpts::AbstractVector{V}, knnK::Int64) where {NT <: NNTree,V<:AbstractVector{Float64}} = 
+LocalNNFunctionApproximator(nntree::NT, nnpts::AbstractVector{V}, knnK::Int64) where {NT <: NNTree,V<:AbstractVector{Float64}} =
     LocalNNFunctionApproximator(nntree, nnpts, zeros(length(nntree.indices)), knnK, nothing)
-LocalNNFunctionApproximator(nntree::NT, nnpts::AbstractVector{V}, rnnR::Float64) where {NT <: NNTree,V<:AbstractVector{Float64}} = 
+LocalNNFunctionApproximator(nntree::NT, nnpts::AbstractVector{V}, rnnR::Float64) where {NT <: NNTree,V<:AbstractVector{Float64}} =
     LocalNNFunctionApproximator(nntree, nnpts, zeros(length(nntree.indices)), nothing, rnnR)
 
 ################ INTERFACE FUNCTIONS ################
