@@ -16,22 +16,22 @@ export
 	LocalFunctionApproximator,
 	LocalGIFunctionApproximator,
 	LocalNNFunctionApproximator,
-	n_interpolants,
+	n_interpolating_points,
 	get_all_interpolating_points,
 	get_all_interpolating_values,
 	get_interpolating_nbrs_idxs_wts,
-	evaluate,
-	batch_update
+	compute_value,
+	set_all_interpolating_values
 
 
 abstract type LocalFunctionApproximator end
 
 """
-	n_interpolants(lfa::LocalFunctionApproximator)
+	n_interpolating_points(lfa::LocalFunctionApproximator)
 
-Return the number of interpolants that the approximator is using
+Return the number of interpolanting points that the approximator is using
 """
-function n_interpolants end
+function n_interpolating_points end
 
 """
 	get_all_interpolating_points(lfa::LocalFunctionApproximator)
@@ -55,18 +55,18 @@ Return a tuple of (indices, weights) for the interpolants for a specific query v
 function get_interpolating_nbrs_idxs_wts end
 
 """
-	evaluate(lfa::LocalFunctionApproximator, v::AbstractVector)
+	compute_value(lfa::LocalFunctionApproximator, v::AbstractVector)
 
 Return the value of the function at some query point v, based on the local function approximator
 """
-function evaluate end
+function compute_value end
 
 """
-	batch_update(lfa::LocalFunctionApproximator, vals::AbstractVector)
+	set_all_interpolating_values(lfa::LocalFunctionApproximator, vals::AbstractVector)
 
 Set the values of all interpolating points to the input vector
 """
-function batch_update end
+function set_all_interpolating_values end
 
 
 include("local_gi_fa.jl")

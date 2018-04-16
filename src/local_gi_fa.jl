@@ -6,7 +6,7 @@ LocalGIFunctionApproximator(grid::G) where {G<:AbstractGrid} = LocalGIFunctionAp
 
 
 ################ INTERFACE FUNCTIONS ################
-function n_interpolants(gifa::LocalGIFunctionApproximator)
+function n_interpolating_points(gifa::LocalGIFunctionApproximator)
     return length(gifa.grid)
 end
 
@@ -22,10 +22,10 @@ function get_interpolating_nbrs_idxs_wts(gifa::LocalGIFunctionApproximator, v::A
     return interpolants(gifa.grid, v)
 end
 
-function evaluate(gifa::LocalGIFunctionApproximator, v::AbstractVector{Float64})
+function compute_value(gifa::LocalGIFunctionApproximator, v::AbstractVector{Float64})
     return interpolate(gifa.grid, gifa.gvalues, v)
 end
 
-function batch_update(gifa::LocalGIFunctionApproximator, gvalues::AbstractVector{Float64})
+function set_all_interpolating_values(gifa::LocalGIFunctionApproximator, gvalues::AbstractVector{Float64})
     gifa.gvalues = deepcopy(gvalues)
 end

@@ -12,7 +12,7 @@ LocalNNFunctionApproximator(nntree::NT, nnpts::AbstractVector{V}, rnnR::Float64)
     LocalNNFunctionApproximator(nntree, nnpts, zeros(length(nntree.indices)), nothing, rnnR)
 
 ################ INTERFACE FUNCTIONS ################
-function n_interpolants(nnfa::LocalNNFunctionApproximator)
+function n_interpolating_points(nnfa::LocalNNFunctionApproximator)
     return length(nnfa.nntree.indices)
 end
 
@@ -58,7 +58,7 @@ function get_interpolating_nbrs_idxs_wts(nnfa::LocalNNFunctionApproximator, v::A
 end
 
 
-function evaluate(nnfa::LocalNNFunctionApproximator, v::AbstractVector{Float64})
+function compute_value(nnfa::LocalNNFunctionApproximator, v::AbstractVector{Float64})
 
     idxs, wts = get_interpolating_nbrs_idxs_wts(nnfa, v)
 
@@ -74,6 +74,6 @@ function evaluate(nnfa::LocalNNFunctionApproximator, v::AbstractVector{Float64})
     return value
 end
 
-function batch_update(nnfa::LocalNNFunctionApproximator, nnvalues::AbstractVector{Float64})
+function set_all_interpolating_values(nnfa::LocalNNFunctionApproximator, nnvalues::AbstractVector{Float64})
   nnfa.nnvalues = deepcopy(nnvalues)
 end
