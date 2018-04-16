@@ -12,28 +12,28 @@ k = 2
 r = 0.5*sqrt(2)
 
 knnfa = LocalNNFunctionApproximator(nntree, points, k)
-batch_update(knnfa, vals)
+set_all_interpolating_values(knnfa, vals)
 
-@test n_interpolants(knnfa) == 4
+@test n_interpolating_points(knnfa) == 4
 
 for i = 1:10
     point = [rand()/2, 0.5]
-    @test LocalFunctionApproximation.evaluate(knnfa, point) == 1.0
+    @test compute_value(knnfa, point) == 1.0
 end
 
 for i = 1:10
     point = [1.0 - rand()/2., 0.5]
-    @test LocalFunctionApproximation.evaluate(knnfa, point) == -1.0
+    @test compute_value(knnfa, point) == -1.0
 end
 
 rnnfa = LocalNNFunctionApproximator(nntree, points, r)
-batch_update(rnnfa,vals)
+set_all_interpolating_values(rnnfa,vals)
 for i = 1:10
     point = [rand()/2, 0.5]
-    @test LocalFunctionApproximation.evaluate(rnnfa, point) == 1.0
+    @test compute_value(rnnfa, point) == 1.0
 end
 
 for i = 1:10
     point = [1.0 - rand()/2., 0.5]
-    @test LocalFunctionApproximation.evaluate(rnnfa, point) == -1.0
+    @test compute_value(rnnfa, point) == -1.0
 end
