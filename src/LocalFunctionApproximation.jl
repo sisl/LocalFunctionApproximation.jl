@@ -1,6 +1,6 @@
 """
 This module implements various methods of locally approximating a function, such as multi-linear, simplex
-and k-nearest-neighbor approximation. An example use case is for locally approximating value 
+and k-nearest-neighbor approximation. An example use case is for locally approximating value
 functions in value iteration
 """
 __precompile__()
@@ -8,6 +8,8 @@ module LocalFunctionApproximation
 
 using GridInterpolations
 using NearestNeighbors
+import NearestNeighbors: NNTree
+
 using Distances
 
 export
@@ -60,7 +62,7 @@ Return the value of the function at some query point v, based on the local funct
 function evaluate end
 
 """
-	batch_update(lfa::LocalFunctionApproximator, vals::AbstractVector) 
+	batch_update(lfa::LocalFunctionApproximator, vals::AbstractVector)
 
 Set the values of all interpolants to the input vector
 """
