@@ -64,7 +64,7 @@ function evaluate end
 """
 	batch_update(lfa::LocalFunctionApproximator, vals::AbstractVector)
 
-Set the values of all interpolants to the input vector
+Set the values of all interpolating points to the input vector
 """
 function batch_update end
 

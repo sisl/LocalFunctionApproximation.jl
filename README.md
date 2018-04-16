@@ -46,4 +46,4 @@ LocalFunctionApproximation.evaluate(gifa, point)         # Need to use namespace
 LocalFunctionApproximation.evaluate(knnfa, point)
 ```
 
-A typical use case for this package is for Local Approximation Value Iteration, as shown [here](https://github.com/Shushman/LocalApproximationValueIteration.jl/blob/split_localfunctionapproximation/src/local_approximation_vi.jl).
+A typical use case for this package is for Local Approximation Value Iteration, as shown [here](https://github.com/Shushman/LocalApproximationValueIteration.jl/blob/master/src/local_approximation_vi.jl).

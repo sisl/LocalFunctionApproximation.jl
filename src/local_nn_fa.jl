@@ -41,20 +41,20 @@ function get_interpolating_nbrs_idxs_wts(nnfa::LocalNNFunctionApproximator, v::A
         end
     end
 
-    probs = zeros(length(dists))
+    weights = zeros(length(dists))
 
     # If exactly one point, set that probability of that idx to 1
     # and that of all others to 0.
     if minimum(dists) < eps(Float64)
-        probs[indmin(dists)] = 1.0
+        weights[indmin(dists)] = 1.0
     else
         for (i,d) in enumerate(dists)
-            probs[i] = 1.0/d
+            weights[i] = 1.0/d
         end
-        probs /= sum(probs)
+        weights /= sum(weights)
     end
 
-    return (idxs, probs)
+    return (idxs, weights)
 end
 
 
