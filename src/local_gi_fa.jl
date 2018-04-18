@@ -27,5 +27,5 @@ function evaluate(gifa::LocalGIFunctionApproximator, v::AbstractVector{Float64})
 end
 
 function batch_update(gifa::LocalGIFunctionApproximator, gvalues::AbstractVector{Float64})
-    gifa.gvalues = deepcopy(gvalues)
+    gifa.gvalues = copy(gvalues)
 end

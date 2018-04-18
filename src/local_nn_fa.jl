@@ -75,5 +75,5 @@ function evaluate(nnfa::LocalNNFunctionApproximator, v::AbstractVector{Float64})
 end
 
 function batch_update(nnfa::LocalNNFunctionApproximator, nnvalues::AbstractVector{Float64})
-  nnfa.nnvalues = deepcopy(nnvalues)
+  nnfa.nnvalues = copy(nnvalues)
 end

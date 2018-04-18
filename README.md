@@ -1,7 +1,6 @@
 # LocalFunctionApproximation
 
-This package provides local function approximators that interpolate values across a space based on some locality metric.
-Currently it supports multi-linear and simplex interpolations for multi-dimensional grids, and k-nearest-neighbor
+This package provides local function approximators that interpolates a scalar-valued function across a vector space. It does so based on the values of the function at "nearby" points, based on an appropriate locality metric, and not via any global regression or fitting function. Currently it supports multi-linear and simplex interpolations for multi-dimensional grids, and k-nearest-neighbor
 interpolation. Two important dependencies are [GridInterpolations](https://github.com/sisl/GridInterpolations.jl/blob/master/src/GridInterpolations.jl)
 and [NearestNeighbors](https://github.com/KristofferC/NearestNeighbors.jl).
 
