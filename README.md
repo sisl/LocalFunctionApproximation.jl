@@ -40,9 +40,9 @@ knnfa = LocalNNFunctionApproximator(nntree, points, k)
 ## Compute values at arbitrary points
 
 ```julia
-point = rand(2)                                           # random 2D point
-LocalFunctionApproximation.evaluate(gifa, point)         # Need to use namespace as Distances.jl also has evaluate
-LocalFunctionApproximation.evaluate(knnfa, point)
+point = rand(2)             # random 2D point
+compute_value(gifa, point)  # obtain the value by interpolating the function at that point       
+compute_value(knnfa, point) # do the same for the kNN approximator
 ```
 
 A typical use case for this package is for Local Approximation Value Iteration, as shown [here](https://github.com/Shushman/LocalApproximationValueIteration.jl/blob/master/src/local_approximation_vi.jl).
