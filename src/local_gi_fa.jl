@@ -27,6 +27,6 @@ function compute_value(gifa::LocalGIFunctionApproximator, v::AbstractVector{Floa
 end
 
 
-function batch_update(gifa::LocalGIFunctionApproximator, gvalues::AbstractVector{Float64})
+function set_all_interpolating_values(gifa::LocalGIFunctionApproximator, gvalues::AbstractVector{Float64})
     gifa.gvalues = copy(gvalues)
 end

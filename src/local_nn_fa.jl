@@ -75,6 +75,6 @@ function compute_value(nnfa::LocalNNFunctionApproximator, v::AbstractVector{Floa
 end
 
 
-function batch_update(nnfa::LocalNNFunctionApproximator, nnvalues::AbstractVector{Float64})
+function set_all_interpolating_values(nnfa::LocalNNFunctionApproximator, nnvalues::AbstractVector{Float64})
   nnfa.nnvalues = copy(nnvalues)
 end
