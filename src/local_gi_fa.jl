@@ -26,7 +26,7 @@ function compute_value(gifa::LocalGIFunctionApproximator, v::AbstractVector{Floa
     return interpolate(gifa.grid, gifa.gvalues, v)
 end
 
-function compute_value(gifa::LocalGIFunctionApproximator, v_list::Vector{Vector{Float64}})
+function compute_value(gifa::LocalGIFunctionApproximator, v_list::AbstractVector{V}) where V <: AbstractVector{Float64}
     @assert length(v_list) > 0
     vals = [compute_value(gifa, pt) for pt in v_list]
     return vals

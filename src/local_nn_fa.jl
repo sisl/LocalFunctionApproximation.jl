@@ -73,7 +73,7 @@ function compute_value(nnfa::LocalNNFunctionApproximator, v::AbstractVector{Floa
     return value
 end
 
-function compute_value(nnfa::LocalNNFunctionApproximator, v_list::Vector{Vector{Float64}})
+function compute_value(nnfa::LocalNNFunctionApproximator, v_list::AbstractVector{V}) where V <: AbstractVector{Float64}
     @assert length(v_list) > 0
     vals = [compute_value(nnfa, pt) for pt in v_list]
     return vals
