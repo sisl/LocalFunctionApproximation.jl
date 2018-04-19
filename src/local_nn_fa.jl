@@ -57,7 +57,6 @@ function get_interpolating_nbrs_idxs_wts(nnfa::LocalNNFunctionApproximator, v::A
     return (idxs, weights)
 end
 
-
 function compute_value(nnfa::LocalNNFunctionApproximator, v::AbstractVector{Float64})
 
     idxs, wts = get_interpolating_nbrs_idxs_wts(nnfa, v)
@@ -74,6 +73,11 @@ function compute_value(nnfa::LocalNNFunctionApproximator, v::AbstractVector{Floa
     return value
 end
 
+function compute_value(nnfa::LocalNNFunctionApproximator, v_list::Vector{Vector{Float64}})
+    @assert length(v_list) > 0
+    vals = [compute_value(nnfa, pt) for pt in v_list]
+    return vals
+end
 
 function set_all_interpolating_values(nnfa::LocalNNFunctionApproximator, nnvalues::AbstractVector{Float64})
   nnfa.nnvalues = copy(nnvalues)

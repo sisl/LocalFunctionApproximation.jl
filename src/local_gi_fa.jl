@@ -26,6 +26,11 @@ function compute_value(gifa::LocalGIFunctionApproximator, v::AbstractVector{Floa
     return interpolate(gifa.grid, gifa.gvalues, v)
 end
 
+function compute_value(gifa::LocalGIFunctionApproximator, v_list::Vector{Vector{Float64}})
+    @assert length(v_list) > 0
+    vals = [compute_value(gifa, pt) for pt in v_list]
+    return vals
+end
 
 function set_all_interpolating_values(gifa::LocalGIFunctionApproximator, gvalues::AbstractVector{Float64})
     gifa.gvalues = copy(gvalues)
