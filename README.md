@@ -9,7 +9,7 @@ and [NearestNeighbors](https://github.com/KristofferC/NearestNeighbors.jl).
 Start Julia and run the following:
 
 ```julia
-Pkg.clone("https://github.com/Shushman/LocalFunctionApproximation.jl")
+Pkg.clone("https://github.com/sisl/LocalFunctionApproximation.jl")
 using LocalFunctionApproximation
 ```
 
