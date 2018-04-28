@@ -10,7 +10,7 @@ NOTE - Currently this repository depends on the `master` branch of `GridInterpol
 Start Julia and run the following:
 
 ```julia
-Pkg.clone("https://github.com/sisl/LocalFunctionApproximation.jl")
+Pkg.add("LocalFunctionApproximation")
 using LocalFunctionApproximation
 ```
 
