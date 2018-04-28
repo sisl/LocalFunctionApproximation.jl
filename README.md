@@ -1,3 +1,6 @@
+[![Build Status](https://travis-ci.org/sisl/LocalFunctionApproximation.jl.svg?branch=master)](https://travis-ci.org/sisl/LocalFunctionApproximation.jl)
+[![Coverage Status](https://coveralls.io/repos/sisl/LocalFunctionApproximation.jl/badge.svg)](https://coveralls.io/r/sisl/LocalFunctionApproximation.jl)
+
 # LocalFunctionApproximation
 
 This package provides local function approximators that interpolates a scalar-valued function across a vector space. It does so based on the values of the function at "nearby" points, based on an appropriate locality metric, and not via any global regression or fitting function. Currently it supports multi-linear and simplex interpolations for multi-dimensional grids, and k-nearest-neighbor
