@@ -1,5 +1,4 @@
 [![Build Status](https://travis-ci.org/sisl/LocalFunctionApproximation.jl.svg?branch=master)](https://travis-ci.org/sisl/LocalFunctionApproximation.jl)
-[![Coverage Status](https://coveralls.io/repos/sisl/LocalFunctionApproximation.jl/badge.svg)](https://coveralls.io/r/sisl/LocalFunctionApproximation.jl)
 
 # LocalFunctionApproximation
 
