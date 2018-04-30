@@ -6,7 +6,6 @@
 This package provides local function approximators that interpolates a scalar-valued function across a vector space. It does so based on the values of the function at "nearby" points, based on an appropriate locality metric, and not via any global regression or fitting function. Currently it supports multi-linear and simplex interpolations for multi-dimensional grids, and k-nearest-neighbor
 interpolation. Two important dependencies are [GridInterpolations](https://github.com/sisl/GridInterpolations.jl/blob/master/src/GridInterpolations.jl)
 and [NearestNeighbors](https://github.com/KristofferC/NearestNeighbors.jl).
-NOTE - Currently this repository depends on the `master` branch of `GridInterpolations.jl`.
 
 ## Installation and Usage
 
@@ -49,4 +48,4 @@ compute_value(gifa, point)  # obtain the value by interpolating the function at 
 compute_value(knnfa, point) # do the same for the kNN approximator
 ```
 
-A typical use case for this package is for Local Approximation Value Iteration, as shown [here](https://github.com/Shushman/LocalApproximationValueIteration.jl/blob/master/src/local_approximation_vi.jl).
+A typical use case for this package is for Local Approximation Value Iteration, as shown [here](https://github.com/Shushman/LocalApproximationValueIteration.jl).
