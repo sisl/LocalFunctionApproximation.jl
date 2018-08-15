@@ -3,7 +3,6 @@ This module implements various methods of locally approximating a function, such
 and k-nearest-neighbor approximation. An example use case is for locally approximating value
 functions in value iteration
 """
-__precompile__()
 module LocalFunctionApproximation
 
 using GridInterpolations
