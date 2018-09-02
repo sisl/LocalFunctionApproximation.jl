@@ -1,5 +1,5 @@
 using LocalFunctionApproximation
-using Base.Test
+using Test
 using NearestNeighbors
 using StaticArrays
 

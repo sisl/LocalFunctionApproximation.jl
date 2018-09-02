@@ -2,8 +2,8 @@ mutable struct LocalNNFunctionApproximator{NT<:NNTree, V<:AbstractVector{Float64
     nntree::NT
     nnpoints::AbstractVector{V}
     nnvalues::Vector{Float64}
-    knnK::Union{Int64,Void}
-    rnnR::Union{Float64,Void}
+    knnK::Union{Int64,Nothing}
+    rnnR::Union{Float64,Nothing}
 end
 # Two default constructors for k and r
 LocalNNFunctionApproximator(nntree::NT, nnpts::AbstractVector{V}, knnK::Int64) where {NT <: NNTree,V<:AbstractVector{Float64}} =
