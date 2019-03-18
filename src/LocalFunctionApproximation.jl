@@ -20,7 +20,8 @@ export
 	get_all_interpolating_values,
 	get_interpolating_nbrs_idxs_wts,
 	compute_value,
-	set_all_interpolating_values
+	set_all_interpolating_values,
+	finite_horizon_extension
 
 
 abstract type LocalFunctionApproximator end
@@ -70,6 +71,13 @@ function compute_value end
 Set the values of all interpolating points to the input vector
 """
 function set_all_interpolating_values end
+
+"""
+	finite_horizon_extension(lfa::LocalFunctionApproximator, hor::Int64)
+
+Extend the LFA appropriately along a new dimension to allow for finite-horizon approximations
+"""
+function finite_horizon_extension end
 
 
 include("local_gi_fa.jl")
