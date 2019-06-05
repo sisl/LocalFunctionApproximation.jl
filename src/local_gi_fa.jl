@@ -35,3 +35,10 @@ end
 function set_all_interpolating_values(gifa::LocalGIFunctionApproximator, gvalues::AbstractVector{Float64})
     gifa.gvalues = copy(gvalues)
 end
+
+function finite_horizon_extension(lfa::LocalFunctionApproximator, hor::StepRange{Int64,Int64})
+    cut_points = lfa.grid.cutPoints
+    extended_grid = RectangleGrid(cut_points..., hor)
+
+    return LocalGIFunctionApproximator(extended_grid)
+end
