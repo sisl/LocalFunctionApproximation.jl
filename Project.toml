@@ -12,7 +12,8 @@ GridInterpolations = "bb4c363b-b914-514b-8517-4eb369bc008a"
 NearestNeighbors = "b8a86587-4115-5ab1-83bc-aa920d37bbce"
 
 [extras]
+StaticArrays = "90137ffa-7385-5640-81b9-e52037218182"
 Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
 
 [targets]
-test = ["Test"]
+test = ["StaticArrays", "Test"]
