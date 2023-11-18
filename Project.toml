@@ -3,6 +3,7 @@ uuid = "db97f5ab-fc25-52dd-a8f9-02a257c35074"
 version = "1.1.0"
 
 [compat]
+Distances = "≥ 0.7.0"
 GridInterpolations = "≥ 0.1.1"
 julia = "≥ 1.0.0"
 
