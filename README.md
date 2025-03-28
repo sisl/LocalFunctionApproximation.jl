@@ -12,7 +12,7 @@ and [NearestNeighbors](https://github.com/KristofferC/NearestNeighbors.jl).
 Start Julia and run the following:
 
 ```julia
-Pkg.add("LocalFunctionApproximation")
+] add LocalFunctionApproximation
 using LocalFunctionApproximation
 ```
 
